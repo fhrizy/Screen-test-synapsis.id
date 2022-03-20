@@ -1,12 +1,12 @@
+import { useState } from "react";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import axios from "axios";
-import { useRouter } from "next/router";
-import { useState } from "react";
-import styles from "../styles/Home.module.scss";
 import Add from "./Add";
 import Data from "./Data";
 import Edit from "./Edit";
 import Topbar from "./Topbar";
+import styles from "../styles/Home.module.scss";
 
 export default function Home({ allData, page }) {
   const [pageId, setPageId] = useState("");
@@ -14,6 +14,7 @@ export default function Home({ allData, page }) {
   const [cancel, setCancel] = useState(false);
   const router = useRouter();
 
+  /* delete selected data from list of data */
   const deleteData = async (_id) => {
     await axios.delete(`http://localhost:3000/api/${_id}`);
     router.push("/");
@@ -48,6 +49,7 @@ export default function Home({ allData, page }) {
   );
 }
 
+/* geting all data from mongoDB */
 export async function getServerSideProps({ query: { page = 1 } }) {
   const res = await fetch(`http://localhost:3000/api/?page=${page}`);
   const data = await res.json();

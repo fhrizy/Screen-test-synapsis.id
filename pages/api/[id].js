@@ -24,6 +24,7 @@ export default async (req, res) => {
         res.status(400).json({ success: false });
       }
       break;
+
     case "PUT":
       try {
         const crud = await CRUD.findByIdAndUpdate(id, req.body, {
@@ -40,6 +41,7 @@ export default async (req, res) => {
         res.status(400).json({ success: false });
       }
       break;
+
     case "DELETE":
       try {
         const deletedCRUD = await CRUD.deleteOne({ _id: id });

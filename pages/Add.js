@@ -1,7 +1,8 @@
-import styles from "../styles/Add.module.scss";
-import axios from "axios";
-import { useRouter } from "next/router";
 import { useState } from "react";
+import { useRouter } from "next/router";
+import axios from "axios";
+
+import styles from "../styles/Add.module.scss";
 
 function Add() {
   const [firstName, setFirstName] = useState("");
@@ -9,8 +10,10 @@ function Add() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+
   const router = useRouter();
 
+  /* Submit to add the data  */
   const addData = async () => {
     await axios.post("http://localhost:3000/api/", {
       firstName: firstName,

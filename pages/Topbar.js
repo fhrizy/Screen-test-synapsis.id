@@ -1,6 +1,6 @@
 import Image from "next/image";
-import styles from "../styles/Topbar.module.scss";
 import Plus from "../public/plus.svg";
+import styles from "../styles/Topbar.module.scss";
 
 function Topbar({ cancel, setCancel, setPage }) {
   return (
