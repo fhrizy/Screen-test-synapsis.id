@@ -18,7 +18,7 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-if you use mongoDB you can create a file in the application with the name next.config.js. You can save it anywhere and with any name.
+if you use mongoDB you can create a file in the application with the name `next.config.js`. You can save it anywhere and with any name.
 
 ```bash
 module.exports = {
@@ -30,7 +30,7 @@ module.exports = {
 ```
 
   
-**if you install the entire next.js application package, then the next.config.js file should already be available.
+**if you install the entire next.js application package, then the `next.config.js` file should already be available.
 
 ## Learn More
 
