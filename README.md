@@ -20,12 +20,15 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 if you use mongoDB you can create a file in the application with the name next.config.js. You can save it anywhere and with any name.
 
+```bash
 module.exports = {
   env: {
     MONGO_URI:
       "mongodb+srv://<username>:<pasasword>@learning.dxyen.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
   },
 };
+```
+
   
 **if you install the entire next.js application package, then the next.config.js file should already be available.
 
