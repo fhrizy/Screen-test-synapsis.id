@@ -20,6 +20,7 @@ export default async (req, res) => {
         res.status(400).json({ success: false });
       }
       break;
+      
     case "POST":
       try {
         const crud = await CRUD.create(req.body);

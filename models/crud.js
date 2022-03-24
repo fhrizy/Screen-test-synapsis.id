@@ -16,7 +16,7 @@ const CRUDSchema = new mongoose.Schema({
   phone: {
     type: String,
     trim: true,
-    maxlength: 13,
+    maxlength: [13, "NO MORE THAN 13 CHARACTERS!"],
   },
   address: {
     type: String,

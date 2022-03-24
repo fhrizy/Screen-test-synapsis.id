@@ -1,7 +1,8 @@
-import styles from "../styles/Edit.module.scss";
-import axios from "axios";
-import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import axios from "axios";
+
+import styles from "../styles/Edit.module.scss";
 
 export default function Edit({ Id }) {
   const [userId, setUserId] = useState("");
@@ -13,6 +14,7 @@ export default function Edit({ Id }) {
 
   const router = useRouter();
 
+  /* Geting data from id selected */
   useEffect(() => {
     let mounted = true;
 
@@ -35,6 +37,7 @@ export default function Edit({ Id }) {
     };
   }, [Id]);
 
+  /* Submit the changing of the data */
   const editData = async () => {
     await axios
       .put(`http://localhost:3000/api/${userId}`, {

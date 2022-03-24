@@ -1,12 +1,14 @@
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import axios from "axios";
-import { useRouter } from "next/router";
+
 import Next from "../public/caret-right-fill.svg";
 import Previous from "../public/caret-left-fill.svg";
 import Edit from "../public/pencil-square.svg";
 import Delete from "../public/trash-fill.svg";
+
 import styles from "../styles/Data.module.scss";
-import { useState, useEffect } from "react";
 
 export default function Data({
   allData,
@@ -19,6 +21,7 @@ export default function Data({
   const [count, setCount] = useState();
   const router = useRouter();
 
+  /* Sum all data collection */
   useEffect(() => {
     let mounted = true;
 
@@ -36,6 +39,7 @@ export default function Data({
     };
   }, []);
 
+  /* to know how much page we have */
   const lastPage = Math.ceil(count / 6);
 
   return (
